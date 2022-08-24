@@ -47,7 +47,7 @@ class App
             parent_permission = gets.chomp.downcase == 'y' ? true : false
             print 'Input the classroom of the student: '
             classroom = gets.chomp
-            @students << Student.new(classroom, age, name: name, parent_permission: parent_permission)
+            @students << Student.new(classroom, age, name, parent_permission)
             @people << @students.last
             print 'Student created successfully!\n"'
         elsif choice == '2'
