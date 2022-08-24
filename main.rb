@@ -2,9 +2,6 @@ require_relative './app'
 
 def main
     app = App.new
-    app.display_books
-    app.display_people
-    app.create_person
 
     loop do
         dispaly_menu
@@ -13,8 +10,8 @@ def main
 end
 
 def dispaly_menu
-    puts '\nwelecome to the library App!'
-    puts '\nWhat would you like to do?'
+    puts 'welecome to the library App!'
+    puts 'What would you like to do?'
     options = [
         '1. List all book',
         '2. List all people',
@@ -28,19 +25,7 @@ def dispaly_menu
 end
 
 def choose_action(app)
-    puts '\nChoose an action:'
-    options = [
-        '1. List all book',
-        '2. List all people',
-        '3. Create a new person',
-        '4. Create a new book',
-        '5. Create a new rental',
-        '6. List all rentals',
-        '7. Exit'
-    ]
-    options.each_with_index do |option, index|
-        puts "(#{index}) #{option}"
-    end
+
     print 'Input the number of the action: '
     choice = gets.chomp.to_i
     case choice

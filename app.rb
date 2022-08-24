@@ -11,6 +11,7 @@ class App
         @students = []
         @books = []
         @rentals = []
+        @teachers = []
     end
 
     def display_books
@@ -28,7 +29,7 @@ class App
             puts 'People List is empty'
         else
             @people.each_with_index do |person, index|
-                puts "(#{index}) [#{person.type}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+                puts "(#{index}), #{person.type}, Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
             end
         end
     end
@@ -51,14 +52,15 @@ class App
             print 'Student created successfully!\n"'
         elsif choice == '2'
             print 'Input the age of the teacher: '
-            age = gets.chomp.to_i
+            age_teacher = gets.chomp.to_i
             print 'Input the name of the teacher: '
-            name = gets.chomp
+            name_teacher = gets.chomp
             print 'Input the permission of the teacher: '
-            permission = gets.chomp
+            permission_teacher = gets.chomp
             print 'Specialization of the teacher: '
-            specialization = gets.chomp.capitalize
-            @teachers << Teacher.new(age, name: name, parent_permission: permission)
+            specialization_teacher = gets.chomp.capitalize
+            #age_teacher, name: name_teacher, parent_permission: permission_teacher, specialization: specialization_teacher, type: 'Teacher'
+            @teachers << Teacher.new(age_teacher, name_teacher, permission_teacher, specialization_teacher)
             @people << @teachers.last
             print 'Teacher created successfully!\n"'
         else
