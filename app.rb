@@ -7,14 +7,14 @@ class App
     attr_accessor :teachers, :students, :books, :rentals, :people
 
     def initialize
-        @teachers = []
+        @people = []
         @students = []
         @books = []
         @rentals = []
     end
 
     def display_books
-        if @books.empty?
+        if @books.length.zero?
             puts 'Book List is empty'
         else
             @books.each do |book, index|
@@ -24,7 +24,7 @@ class App
     end
 
     def display_people
-        if @people.empty?
+        if @people.length.zero?
             puts 'People List is empty'
         else
             @people.each do |person, index|
