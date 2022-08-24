@@ -27,7 +27,7 @@ class App
         if @people.length.zero?
             puts 'People List is empty'
         else
-            @people.each do |person, index|
+            @people.each_with_index do |person, index|
                 puts "(#{index}) [#{person.type}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
             end
         end
