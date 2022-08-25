@@ -38,7 +38,7 @@ def choose_action(app)
     when 4
         app.create_book
     when 5
-        app.create_rental
+        app.create_rental33
     when 6
         app.display_rentals
     when 7

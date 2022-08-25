@@ -86,10 +86,52 @@ class App
         book_index = gets.chomp.to_i
         print 'Input the date of the rental [yyyy/mm/dd]: '
         date = gets.chomp
+        #@people[index].add_rental(date, @books[book_index])
+        puts @people[index]
+        puts @books[book_index]
+        #@rentals << Rental.new(date, @people[index], @books[book_index])
+        #@rentals << @people[index].rentals.last
+        puts 'Rental created successfully!\n"'
+    end 
+
+    def create_rental2
+        #book_index = gets.chomp.to_i
+        person_index = gets.chomp.to_i
+        puts @people[person_index]
+        puts @people.find_index(person_index)
+    end
+        
+    def create_new_rental
+        display_people
+        print 'Input the index of the person: '
+        index = gets.chomp.to_i
+        display_books
+        print 'Input the index of the book: '
+        book_index = gets.chomp.to_i
+        print 'Input the date of the rental [yyyy/mm/dd]: '
+        date = gets.chomp
         @people[index].add_rental(date, @books[book_index])
         @rentals << @people[index].rentals.last
         puts 'Rental created successfully!\n"'
-    end 
+    end
+
+    def create_rental33
+        puts 'Select a book from the following list by number rental 3'
+        display_books
+        rented_book = gets.chomp.capitalize
+        puts 'Select a person from the following list by number (not by id)'
+        display_people
+        renter = gets.chomp.capitalize
+        puts 'Date [yyyy/mm/dd]: '
+        date_of_rent = gets.chomp
+        add_rental(date_of_rent, renter, rented_book)
+        print "Rental created successfully.\n"
+      end
+    
+      def add_rental(date_of_rent, rented_book, renter)
+        new_rental = Rental.new(date_of_rent, @people[renter.to_i], @books[rented_book.to_i])
+        @rental_list << new_rental
+      end
 
     def display_rentals
         if @rentals.empty?
