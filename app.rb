@@ -4,22 +4,22 @@ require_relative './book'
 require_relative './rental'
 
 class App
-  attr_accessor :book_list, :people_list, :rental_list
+  attr_accessor :books, :peoples, :rentals
 
   def initialize
-    @book_list = []
-    @people_list = []
-    @rental_list = []
+    @books = []
+    @peoples = []
+    @rentals = []
   end
 
   def display_books
-    @book_list.each_with_index do |book, index|
+    @books.each_with_index do |book, index|
       puts "(#{index}) Title: \"#{book.title}\", Author: #{book.author}"
     end
   end
 
   def display_people
-    @people_list.each_with_index do |person, index|
+    @peoples.each_with_index do |person, index|
       puts "(#{index}) [#{person.type}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
   end
@@ -59,7 +59,7 @@ class App
 
   def add_student(student_classroom, student_age, student_name, has_permission)
     new_student = Student.new(student_classroom, student_age, student_name, has_permission)
-    @people_list << new_student
+    @peoples << new_student
   end
 
   def create_teacher
@@ -75,7 +75,7 @@ class App
 
   def add_teacher(teacher_specialization, teacher_age, teacher_name, has_permission)
     new_teacher = Teacher.new(teacher_specialization, teacher_age, teacher_name, has_permission)
-    @people_list << new_teacher
+    @peoples << new_teacher
   end
 
   def create_book
@@ -89,7 +89,7 @@ class App
 
   def add_book(book_title, book_author)
     new_book = Book.new(book_title, book_author)
-    @book_list << new_book
+    @books << new_book
   end
 
   def create_rental
@@ -106,8 +106,8 @@ class App
   end
 
   def add_rental(date_of_rent, rented_book, renter)
-    new_rental = Rental.new(date_of_rent, @book_list[rented_book.to_i], @people_list[renter.to_i])
-    @rental_list << new_rental
+    new_rental = Rental.new(date_of_rent, @books[rented_book.to_i], @peoples[renter.to_i])
+    @rentals << new_rental
   end
 
   def display_rental
@@ -118,7 +118,7 @@ class App
   end
 
   def list_rental_by_id(renter_id)
-    @rental_list.each do |rental|
+    @rentals.each do |rental|
       if rental.person.id == renter_id
         puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
       end
