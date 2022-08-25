@@ -1,4 +1,4 @@
-require_relative './app'
+require_relative './app2'
 
 def main
     app = App.new
@@ -38,9 +38,9 @@ def choose_action(app)
     when 4
         app.create_book
     when 5
-        app.create_rental33
+        app.create_rental
     when 6
-        app.display_rentals
+        app.display_rental
     when 7
         exit
     else
