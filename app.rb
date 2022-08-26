@@ -13,7 +13,7 @@ class App
   end
 
   def display_books
-    @books.each_with_index do |book, index|
+    @books.each_with_index do |book|
       puts "(#{index}) Title: \"#{book.title}\", Author: #{book.author}"
     end
   end
@@ -106,7 +106,7 @@ class App
   end
 
   def add_rental(date_of_rent, rented_book, renter)
-    new_rental = Rental.new(date_of_rent, @books[rented_book.to_i], @peoples[renter.to_i])
+    new_rental = Rental.new(date_of_rent, @books[rented_book], @peoples[renter])
     @rentals << new_rental
   end
 
