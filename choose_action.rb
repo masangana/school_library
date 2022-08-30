@@ -1,3 +1,5 @@
+require_relative "./create_files"
+
 def choose_action(app)
   choice = gets.chomp
   case choice
@@ -19,6 +21,7 @@ def choose_action(app)
 end
 
 def exit_app(app)
+  create_dir
   puts 'Thank you for using this app! Now exiting...'
   exit
 end
