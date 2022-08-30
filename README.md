@@ -49,6 +49,12 @@ Kindly modify the files as needed.
 
 ## Author
 
+👤 **Jesús Vázquez**
+
+- GitHub: [@jevazquezb](https://github.com/jevazquezb)
+- Twitter: [@javb_1187](https://twitter.com/javb_1187)
+- LinkedIn: [@jevazquezb](https://www.linkedin.com/in/jevazquezb)
+
 👤 **Alex Masangana**
 
   - GitHub: [![GitHub Badge](https://img.shields.io/badge/-Alexander-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/masangana)
