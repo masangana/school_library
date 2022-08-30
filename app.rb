@@ -2,6 +2,7 @@ require_relative './student'
 require_relative './teacher'
 require_relative './book'
 require_relative './rental'
+require 'json'
 
 class App
   attr_accessor :books, :peoples, :rentals
@@ -123,5 +124,11 @@ class App
         puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
       end
     end
+  end
+
+  def save_files(books, peoples, rentals)
+    books_json = JSON.generate(books)
+    peoples_json = JSON.generate(peoples)
+    rentals_json = JSON.generate(rentals)
   end
 end
