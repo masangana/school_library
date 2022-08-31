@@ -1,4 +1,4 @@
-require './create_dir_and_files.rb'
+require './create_dir_and_files'
 
 def choose_action(app)
   choice = gets.chomp
@@ -22,7 +22,7 @@ end
 
 def exit_app(app)
   create_dir
-  app.save_data;
+  app.save_data
   puts 'Thank you for using this app! Now exiting...'
   exit
 end

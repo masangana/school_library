@@ -11,4 +11,3 @@ def create_files
   FileUtils.touch('./data/people.json')
   FileUtils.touch('./data/rental.json')
 end
-

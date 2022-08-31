@@ -16,9 +16,7 @@ module PeopleData
       end
     end
 
-    File.open("./data/people.json", "w") do |f|
-      f.write(JSON.pretty_generate(data))
-    end
+    File.write('./data/people.json', JSON.pretty_generate(data))
   end
 
   def retrieve_people

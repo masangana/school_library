@@ -7,9 +7,7 @@ module BooksData
       { title: book.title, author: book.author }
     end
 
-    File.open("./data/books.json", "w") do |f|
-      f.write(JSON.pretty_generate(data))
-    end
+    File.write('./data/books.json', JSON.pretty_generate(data))
   end
 
   def retrieve_books

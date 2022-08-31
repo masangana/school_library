@@ -14,5 +14,21 @@
     "parent_permission": true,
     "specialization": "Physics",
     "type": "Teacher"
+  },
+  {
+    "id": 54736,
+    "name": "Alex",
+    "age": "26",
+    "parent_permission": true,
+    "classroom": "1",
+    "type": "Student"
+  },
+  {
+    "id": 95413,
+    "name": "Prof",
+    "age": "58",
+    "parent_permission": true,
+    "specialization": "Adn",
+    "type": "Teacher"
   }
 ]

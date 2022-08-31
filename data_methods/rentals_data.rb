@@ -7,13 +7,11 @@ module RentalsData
       { date: rental.date, book: rental.book.title, person_id: rental.person.id }
     end
 
-    File.open("./data/rental.json", "w") do |f|
-      f.write(JSON.pretty_generate(data))
-    end
+    File.write('./data/rental.json', JSON.pretty_generate(data))
   end
 
   def find_book(books, title)
-    books.each { |book| return book if book.title == title }    
+    books.each { |book| return book if book.title == title }
   end
 
   def find_person(people, id)
