@@ -1,3 +1,5 @@
+require './create_dir_and_files'
+
 def choose_action(app)
   choice = gets.chomp
   case choice
@@ -14,11 +16,13 @@ def choose_action(app)
   when '6'
     app.display_rental
   else
-    exit_app
+    exit_app(app)
   end
 end
 
-def exit_app
+def exit_app(app)
+  create_dir
+  app.save_data
   puts 'Thank you for using this app! Now exiting...'
   exit
 end

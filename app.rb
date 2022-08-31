@@ -2,14 +2,22 @@ require_relative './student'
 require_relative './teacher'
 require_relative './book'
 require_relative './rental'
+require_relative './data_methods/books_data'
+require_relative './data_methods/people_data'
+require_relative './data_methods/rentals_data'
+require 'json'
 
 class App
   attr_accessor :books, :peoples, :rentals
 
+  include BooksData
+  include PeopleData
+  include RentalsData
+
   def initialize
-    @books = []
-    @peoples = []
-    @rentals = []
+    @books = retrieve_books
+    @peoples = retrieve_people
+    @rentals = retrieve_rentals(@books, @peoples)
   end
 
   def display_books
@@ -123,5 +131,11 @@ class App
         puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
       end
     end
+  end
+
+  def save_data
+    save_books(@books)
+    save_people(@peoples)
+    save_rentals(@rentals)
   end
 end

@@ -1,0 +1,17 @@
+[
+  {
+    "date": "2022/08/1",
+    "book": "Lord of the rings",
+    "person_id": 58278
+  },
+  {
+    "date": "2022/08/19",
+    "book": "Thermodynamics",
+    "person_id": 30441
+  },
+  {
+    "date": "2002/02/12",
+    "book": "Lord of the rings",
+    "person_id": 54736
+  }
+]
