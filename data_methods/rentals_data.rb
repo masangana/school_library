@@ -20,7 +20,7 @@ module RentalsData
     people.each { |person| return person if person.id == id }
   end
 
-  def get_rentals(books, people)
+  def retrieve_rentals(books, people)
     data = []
     file = './data/rental.json'
 

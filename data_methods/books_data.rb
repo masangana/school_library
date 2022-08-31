@@ -12,7 +12,7 @@ module BooksData
     end
   end
 
-  def get_books
+  def retrieve_books
     data = []
     file = './data/books.json'
 

@@ -21,7 +21,7 @@ module PeopleData
     end
   end
 
-  def get_people
+  def retrieve_people
     data = []
     file = './data/people.json'
     if File.exist?(file) && File.read(file) != ''

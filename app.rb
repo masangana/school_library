@@ -15,9 +15,9 @@ class App
   include RentalsData
 
   def initialize
-    @books = get_books
-    @peoples = get_people
-    @rentals = get_rentals(@books, @peoples)
+    @books = retrieve_books
+    @peoples = retrieve_people
+    @rentals = retrieve_rentals(@books, @peoples)
   end
 
   def display_books
