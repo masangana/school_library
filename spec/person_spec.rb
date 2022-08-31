@@ -12,14 +12,12 @@ describe 'Person object' do
     it 'returns correct age, name and parent_permission data from of person object' do
       expect(person.name).to eq 'Mike'
       expect(person.age).to eq 26
-      expect(person.parent_permission) == false
 
       expect(person.name).not_to eq 'Ruth'
-      expect(person.age).not_to eq 30      
+      expect(person.age).not_to eq 30
     end
 
     it 'checks the availability of Person class method/s' do
-      # checks if add_rental functions exist or not
       expect(Person.instance_methods(false).include?(:add_rental)).to eq true
     end
   end

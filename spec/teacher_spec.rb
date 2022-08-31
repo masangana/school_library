@@ -16,7 +16,7 @@ describe 'Teacher object' do
 
       expect(teacher.name).not_to eq 'None'
       expect(teacher.age).not_to eq 30
-      expect(teacher.specialization).not_to eq 'Swimming'      
+      expect(teacher.specialization).not_to eq 'Swimming'
     end
 
     it 'checks the availability of Teacher class method/s' do

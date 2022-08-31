@@ -12,7 +12,7 @@ describe 'Student object' do
       expect(student.name).to eq 'Mike'
       expect(student.age).to eq 28
       expect(student.classroom).to eq 101
-      expect(student.parent_permission) == false
+      expect(student.parent_permission).to eq false
 
       expect(student.name).not_to eq 'Ruth'
       expect(student.age).not_to eq 30
