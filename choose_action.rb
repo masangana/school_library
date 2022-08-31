@@ -22,7 +22,7 @@ end
 
 def exit_app(app)
   create_dir
-  # app.save_files
+  app.save_data;
   puts 'Thank you for using this app! Now exiting...'
   exit
 end
