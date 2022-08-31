@@ -2,15 +2,22 @@ require_relative './student'
 require_relative './teacher'
 require_relative './book'
 require_relative './rental'
+require_relative './data_methods/books_data'
+require_relative './data_methods/people_data'
+require_relative './data_methods/rentals_data'
 require 'json'
 
 class App
   attr_accessor :books, :peoples, :rentals
 
+  include BooksData
+  include PeopleData
+  include RentalsData
+
   def initialize
-    @books = []
-    @peoples = []
-    @rentals = []
+    @books = get_books
+    @peoples = get_people
+    @rentals = get_rentals(@books, @peoples)
   end
 
   def display_books
@@ -126,9 +133,9 @@ class App
     end
   end
 
-  def save_files(books, peoples, rentals)
-    books_json = JSON.generate(books)
-    peoples_json = JSON.generate(peoples)
-    rentals_json = JSON.generate(rentals)
+  def save_data
+    save_books(@books)
+    save_people(@peoples)
+    save_rentals(@rentals)
   end
 end
