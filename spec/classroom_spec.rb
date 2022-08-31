@@ -1,9 +1,7 @@
-require_relative '../student'
 require_relative '../classroom'
 
 describe 'Unit test for Classroom object' do
     before(:each) do
-        @student = Student.new(1, 18,'Jesus',  'true', 'Student')
         @classroom = Classroom.new(1)
     end
 
